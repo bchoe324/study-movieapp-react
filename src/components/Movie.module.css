@@ -1,0 +1,44 @@
+.card_wrap {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.text_wrap {
+  font-size: 0.875rem;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 1% 0;
+}
+h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+h2 a:hover {
+  color: cadetblue;
+}
+
+.img_wrap {
+}
+.img_wrap img {
+  object-fit: cover;
+  width: 100%;
+}
+ul {
+  line-height: 1.2rem;
+}
+.text_wrap li {
+  display: inline-block;
+  margin-right: 0.2rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+.text_wrap li:not(:last-of-type):after {
+  content: "\00B7";
+  margin-left: 0.2rem;
+}
+.rating {
+  line-height: 1.2rem;
+}
+.summary {
+}
