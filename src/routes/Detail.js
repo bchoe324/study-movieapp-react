@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Header from "../components/Header";
 import styles from "../components/Detail.module.css";
 
-function Trailer({ trCode, setShowing }) {
+function Trailer({ title, trCode, setShowing }) {
   const onClose = () => {
     setShowing((prev) => !prev);
   };
@@ -17,6 +17,7 @@ function Trailer({ trCode, setShowing }) {
         src={`https://www.youtube.com/embed/${trCode}?rel=0&wmode=transparent&border=0&autoplay=1&iv_load_policy=3`}
         frameBorder="0"
         allowFullScreen
+        title={`${title} trailer`}
       ></iframe>
     </div>
   );
@@ -47,7 +48,7 @@ function Detail() {
       {loading ? (
         <h2>Loading...</h2>
       ) : (
-        <div className="movie_wrap">
+        <div>
           <div className={styles.bg_wrap}>
             <div
               className={styles.bg}
@@ -104,7 +105,11 @@ function Detail() {
             </div>
           </div>
           {showing ? (
-            <Trailer trCode={movie.yt_trailer_code} setShowing={setShowing} />
+            <Trailer
+              title={movie.title}
+              trCode={movie.yt_trailer_code}
+              setShowing={setShowing}
+            />
           ) : null}
         </div>
       )}
